@@ -9,7 +9,11 @@ class Estudiante{
     string materia;
 
     public:
+    
+    // Constructor parametrizado
+    Estudiante(string n, string e, string c, string m) : nombre(n), edad(e), carnet(c), materia(m) {}
 
+    // Constructor por defecto
     Estudiante(){
         this->nombre = "";
         this->edad = "";
@@ -31,8 +35,7 @@ class Estudiante{
 
 int main(){
 
-    Estudiante Primer = Estudiante();
-    Primer.Insertar("Juan", "20", "12345", "Matemáticas");
+    Estudiante Primer("Juan", "20", "12345", "Matemáticas");
     cout << Primer.Imprimir();
 
     return 0;

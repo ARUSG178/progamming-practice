@@ -5,12 +5,13 @@ using namespace std;
 class Profesor{
     public:
     string nombre;
-    Profesor(string& nombre) : nombre(nombre){}
+    Profesor(const string& nombre) : nombre(nombre){}
 };
 class Auxiliar{
     public:
     string nombre;
-    Auxiliar(string& nombre) : nombre(nombre){}
+    Auxiliar() : nombre("") {}
+    Auxiliar(const string& nombre) : nombre(nombre){}
 };
 class EquipoDocente {
     public:
@@ -18,8 +19,7 @@ class EquipoDocente {
         Auxiliar auxiliares[4];
         int cantidadAuxiliares;
     
-        EquipoDocente(const Profesor& resp, const Auxiliar auxs[], int cantidad)
-        : responsable(resp), cantidadAuxiliares(cantidad) {
+        EquipoDocente(const Profesor& resp, const Auxiliar auxs[], int cantidad): responsable(resp), cantidadAuxiliares(cantidad) {
             if (cantidad < 1 || cantidad > 4) {
                 cerr << "Error: Debe tener entre 1 y 4 auxiliares\n";
                 exit(1);

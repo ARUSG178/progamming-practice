@@ -8,21 +8,13 @@ class figura{
 
     public: 
 
-    float getBase(){
-        return base;
-    }
+    float getBase(){ return base; }
 
-    float getAltura(){
-        return altura;
-    }
+    float getAltura(){ return altura; }
 
-     void setBase(float b){
-        base = b;
-    }
+    void setBase(float b){ base = b; }
 
-    void setAltura(float a){
-        altura = a;
-    }
+    void setAltura(float a){ altura = a;}
 
     figura(float b, float a){
         this->base = b;
