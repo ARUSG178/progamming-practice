@@ -1,17 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int greaterNumber(int numA, int numB){
-    if(numA > numB) return numA;
-    else return numB;
+int revers(int num){
+    int rev = 0;
+    while (num > 0){
+        int digit = num % 10;
+        rev = rev * 10 + digit;
+        num = num / 10;
+    }
+    return rev;
 }
 
 int main (){
-    int numA, numB;
-    cout << "Enter the numbers to find out which is greater. [firts number, second number]: ";
-    cin >> numA >> numB;
-
-    cout << "The greater number between the two is: " << greaterNumber(numA, numB) << endl;
-
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << "Reversed number: " << revers(num) << endl;
     return 0;
 }

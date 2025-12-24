@@ -1,30 +1,24 @@
 #include <iostream>
 using namespace std;
 
-int debtCalculus(int entry, int exit){
-        
-    int totalH = exit - entry;
-    if(entry > exit) totalH += 24;
-
-    if(totalH >= 0) return 0;
-
-    int amount = (totalH - 1) * 80 + 100;
-
-    return amount;
+bool haveSolution(int x) {
+    if (x < 0) return true;
+    else return false;
 }
 
-int main (){
-    int entryHour, exitHour;
-    cout << "Enter the entry hour and the exit our, in this order [24 format]: ";
-    cin >> entryHour >> exitHour;
+int main () {
+    int A, B, C;
+    cout << "Enter values [A, B, C]" << endl;
 
-    if(entryHour < 0 || entryHour > 23 || exitHour < 0 || exitHour > 23){
-        cout << "Incorrect format" << endl;
-        return 1;
+    int discriminant = (B*B) - (4*A*C);
+
+    if(haveSolution(discriminant)) {
+        int fSolution = (-B + discriminant)/2*A;
+        int sSolution = (-B - discriminant)/2*A;
+        cout << "fisrt solution " << fSolution << endl;
+        cout << "second soluton" << sSolution << endl;
     }
-
-
-    cout << "The total that must be pay is: " << debtCalculus(entryHour, exitHour) << endl;
-
+    else cout << "the ecuation doesn't have solution";
+    
     return 0;
 }
